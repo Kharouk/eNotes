@@ -17,10 +17,13 @@
         this.falsey = false;
         return console.log(
           "%c passed the test",
-          "color: green; font-size: 20px;"
+          "color: green; font-size: 14px;"
         );
       }
-      console.log("%c Failure!", "color: red");
+      console.log(
+        `%c Failure! Expected '${b}' but received '${this.a}'`,
+        "color: red; font-size: 14px;"
+      );
     },
 
     isArray: function() {
@@ -31,17 +34,33 @@
         this.falsey = false;
         return console.log(
           "%c passed the test",
-          "color: green; font-size: 20px;"
+          "color: green; font-size: 14px;"
         );
       }
-      console.log("%c Failure!", "color: red");
+      console.log(
+        `%c Failure! Expected %c'${b}' but received '${this.a}'`,
+        "color: red; font-size: 14px;"
+      );
     },
 
     describe: function(message, fn) {
       console.log(
-        `^^^That test was for: %c ${message}^^^`,
-        "font-weight: bold;"
+        `%c ${message}'s tests:`,
+        "font-weight: bold; font-size: 2em;"
       );
+      if (typeof fn === "function") {
+        fn.call();
+      }
+    },
+
+    it: function(message, fn) {
+      console.log(
+        `%c Test -- ${message} -- Test`,
+        "font-style: italic; font-size: 1.2em"
+      );
+      if (typeof fn === "function") {
+        fn.call();
+      }
     }
   };
   exports.Barracuda = Barracuda;
