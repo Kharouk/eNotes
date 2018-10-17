@@ -12,7 +12,7 @@
       return this;
     },
 
-    toBe: function(b) {
+    toEqual: function(b) {
       if (this.a === b || (this.a !== b && this.falsey === true)) {
         this.falsey = false;
         return console.log(
@@ -37,11 +37,12 @@
       console.log("%c Failure!", "color: red");
     },
 
-    describe: function(message, callback) {
-      console.log(`That test was for: ${message}`);
+    describe: function(message, fn) {
+      console.log(
+        `^^^That test was for: %c ${message}^^^`,
+        "font-weight: bold;"
+      );
     }
   };
   exports.Barracuda = Barracuda;
 })(this);
-
-// Creating the 'Describe' block:
