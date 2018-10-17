@@ -5,7 +5,8 @@ class NoteList {
   getList() {
     return this.list;
   }
-  addNote(note) {
+  addNote(message) {
+    let note = new Note(message);
     this.list.push(note);
   }
 }

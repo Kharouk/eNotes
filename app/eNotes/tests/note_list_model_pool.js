@@ -1,5 +1,5 @@
 barracuda.describe("Note List", function() {
-  barracuda.it("checks it exists", function() {
+  barracuda.it("The ball rolling test trademarked by laura", function() {
     barracuda.expect(typeof NoteList).toEqual("function");
   });
 
@@ -8,10 +8,20 @@ barracuda.describe("Note List", function() {
     barracuda.expect(Notebook.getList()).isArray();
   });
 
-  barracuda.it("can store instances of Notes", function() {
+  barracuda.it("can store strings that become notes", function() {
     const Notebook = new NoteList();
-    Notebook.addNote("note");
-    Notebook.addNote("anotherNote");
-    barracuda.expect(Notebook.getList()).toContain("note");
+
+    // TODO: create mock class to do this automatically
+    let mockNote = "hello";
+
+    Notebook.addNote(mockNote);
+    barracuda.expect(Notebook.getList()[0].note).toEqual("hello");
+  });
+
+  barracuda.it("instantiate Notes when adding to notelist", function() {
+    const Notebook = new NoteList();
+    let note = "Having the time of me life";
+    Notebook.addNote(note);
+    barracuda.expect(Notebook.getList()[0] instanceof Note).toEqual(true);
   });
 });
