@@ -43,6 +43,19 @@
       );
     },
 
+    toContain: function(item) {
+      if (typeof this.a === "object" && this.a.includes(item)) {
+        return console.log(
+          "%c passed the test",
+          "color: green; font-size: 14px;"
+        );
+      }
+      console.log(
+        `%c Failure! Expected '${this.a}' to contain '${item}'`,
+        "color: red; font-size: 14px;"
+      );
+    },
+
     describe: function(message, fn) {
       console.log(
         `%c ${message}'s tests:`,
