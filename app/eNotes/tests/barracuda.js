@@ -56,6 +56,19 @@
       );
     },
 
+    toHaveBeenCalled: function() {
+      if (this.a.methodCount < 1) {
+        console.log(
+          `%c Failure! Expected '${this.a}' to have been called.`,
+          "color: red; font-size: 14px;"
+        );
+      }
+      return console.log(
+        "%c passed the test",
+        "color: green; font-size: 14px;"
+      );
+    },
+
     describe: function(message, fn) {
       console.log(
         `%c ${message}'s tests:`,

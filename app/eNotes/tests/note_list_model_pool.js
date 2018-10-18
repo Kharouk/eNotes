@@ -10,10 +10,7 @@ barracuda.describe("Note List", function() {
 
   barracuda.it("can store strings that become notes", function() {
     const Notebook = new NoteList();
-
-    // TODO: create mock class to do this automatically
-    let mockNote = "hello";
-
+    const mockNote = "hello";
     Notebook.addNote(mockNote);
     barracuda.expect(Notebook.getList()[0].note).toEqual("hello");
   });
@@ -24,6 +21,4 @@ barracuda.describe("Note List", function() {
     Notebook.addNote(note);
     barracuda.expect(Notebook.getList()[0] instanceof Note).toEqual(true);
   });
-
-  
 });
