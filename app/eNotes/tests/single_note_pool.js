@@ -3,12 +3,13 @@ barracuda.describe("Single Note View", function() {
     barracuda.expect(typeof SingleNoteView).toEqual("function");
   });
   barracuda.it(
-    "The single note view constructor takes a note model as a parameter.",
+    "The single note view returns a string of that note.",
     function() {
-      const doubleNote = new Shark("note");
-      doubleNote.eat("hello");
+      const doubleNote = "buy groceries";
       let singleNoteView = new SingleNoteView(doubleNote);
-      Barracuda.expect(singleNoteView.note).toContain(doubleNote);
+      Barracuda.expect(singleNoteView.htmlString()).toEqual(
+        "<div><p>buy groceries</p></div>"
+      );
     }
   );
 });

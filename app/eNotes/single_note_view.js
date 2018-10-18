@@ -1,7 +1,11 @@
 class SingleNoteView {
-  constructor(message = new Note(message)) {
+  constructor(message) {
+    let note = new Note(message);
     this.note = [];
-    message.note;
-    this.note.push(message);
+    this.note.push(note);
+  }
+
+  htmlString() {
+    return `<div><p>${this.note[0].getNote()}</p></div>`;
   }
 }
