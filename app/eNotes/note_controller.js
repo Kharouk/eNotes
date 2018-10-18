@@ -19,6 +19,10 @@ saveName = () => {
   newNote(input);
 };
 
+addNote = message => {
+  let multipleNotes = document.querySelector();
+};
+
 // (exports => {
 //   class NoteController {
 //     constructor(list) {
