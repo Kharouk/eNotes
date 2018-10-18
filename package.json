@@ -4,7 +4,7 @@
   "description": "A note application that highlights my Barracuda Testing Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "http-server -p 3000 app/eNotes/"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
     "url": "https://github.com/Kharouk/eNotes/issues"
   },
   "homepage": "https://github.com/Kharouk/eNotes#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "http-server": "^0.11.1"
   }
 }

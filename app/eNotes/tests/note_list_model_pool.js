@@ -24,4 +24,6 @@ barracuda.describe("Note List", function() {
     Notebook.addNote(note);
     barracuda.expect(Notebook.getList()[0] instanceof Note).toEqual(true);
   });
+
+  
 });
