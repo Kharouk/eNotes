@@ -16,4 +16,11 @@ barracuda.describe("NoteListView", function() {
     let noteListView = new NoteListView();
     barracuda.expect(noteListView.viewAll()).toEqual(htmlString);
   });
+
+  barracuda.it("expect the 25 character limit to be in effect", function() {
+    htmlString = `<ul><div><li>1234567891011121314151617</li></div></ul>`;
+    message = "12345678910111213141516171415";
+    let view = new NoteListView();
+    barracuda.expect(view.viewAll([message])).toEqual(htmlString);
+  });
 });

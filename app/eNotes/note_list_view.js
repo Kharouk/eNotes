@@ -2,7 +2,9 @@ class NoteListView {
   viewAll(list = []) {
     let htmlString = "<ul>";
     list.map(item => {
-      htmlString += `<div><li>${item}</li></div>`;
+      // prettier-ignore
+      let splitItem = item.split("").splice(0, 25).join("");
+      htmlString += `<div><li>${splitItem}</li></div>`;
     });
     htmlString += "</ul>";
     return htmlString;

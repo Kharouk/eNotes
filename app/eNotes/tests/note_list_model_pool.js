@@ -12,13 +12,15 @@ barracuda.describe("Note List", function() {
     const Notebook = new NoteList();
     const mockNote = "hello";
     Notebook.addNote(mockNote);
-    barracuda.expect(Notebook.getList()[0].note).toEqual("hello");
+    barracuda.expect(Notebook.getList()[0]).toEqual("hello");
   });
 
   barracuda.it("instantiate Notes when adding to notelist", function() {
     const Notebook = new NoteList();
     let note = "Having the time of me life";
     Notebook.addNote(note);
-    barracuda.expect(Notebook.getList()[0] instanceof Note).toEqual(true);
+    barracuda
+      .expect(Notebook.getList()[0])
+      .toEqual("Having the time of me life");
   });
 });
