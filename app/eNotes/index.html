@@ -8,6 +8,10 @@
 </head>
 <body>
   <h2 style="text-align: center; font-family: sans-serif;">Check out the Console for the Tests! 🐟</h2>
+  <div class="greeting"></div>
+  <div id="app"></div>
+  <input type="text" name="new-note" id="newNote" placeholder="Enter New Note"">
+  <input type="submit" value="Submit" onclick="saveName()">
   <script src="./tests/barracuda.js"></script>
   <script src="./tests/shark.js"></script>
   <script src="note_model.js"></script>
@@ -18,5 +22,7 @@
   <script src="tests/note_list_model_pool.js"></script>
   <script src="tests/note_list_view_pool.js"></script>
   <script src="tests/single_note_pool.js"></script>
+  <script src="tests/note_controller_pool.js"></script>
+  <script src="note_controller.js"></script>
 </body>
 </html>

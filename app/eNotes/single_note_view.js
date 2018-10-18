@@ -1,11 +1,14 @@
 class SingleNoteView {
   constructor(message) {
-    let note = new Note(message);
-    this.note = [];
-    this.note.push(note);
+    if (message instanceof Note === false) {
+      let note = new Note(message);
+      this.note = note;
+    } else {
+      this.note = note;
+    }
   }
 
   htmlString() {
-    return `<div><p>${this.note[0].getNote()}</p></div>`;
+    return `<div><p>${this.note.getNote()}</p></div>`;
   }
 }

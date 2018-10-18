@@ -1,5 +1,5 @@
 class NoteList {
-  constructor() {
+  constructor(item) {
     this.list = [];
   }
   getList() {
