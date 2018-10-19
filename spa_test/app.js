@@ -1,6 +1,6 @@
 console.log("running...");
 displayNote();
-urlDisplayCat();
+urlDisplayAnimals();
 
 function displayNote() {
   document
@@ -15,7 +15,7 @@ function outputNote() {
   document.querySelector("#note").innerHTML = "<h1>Wow What a Note</h1";
 }
 
-function urlDisplayCat() {
+function urlDisplayAnimals() {
   window.addEventListener("hashchange", showCatForCurrentPage);
 }
 

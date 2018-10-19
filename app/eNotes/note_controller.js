@@ -23,6 +23,34 @@ addNote = message => {
   let multipleNotes = document.querySelector();
 };
 
+displayNotes = element => {
+  const view = new NoteListView();
+  const list = new NoteList();
+  if (element) {
+    list.addNote(element);
+  }
+  list.addNote(
+    "Hello World Hello World .Hello WorldHello WorldHello WorldHello World"
+  );
+  list.addNote("Bye World");
+  const notes = view.viewAll(list.getList());
+  return notes;
+};
+
+let element = document.querySelector(".multi-note");
+element.innerHTML = displayNotes();
+
+addToList = () => {
+  let input = document.querySelector("#actualNewNote").value;
+  insertIntoExistence(input);
+};
+
+insertIntoExistence = element => {
+  const view = new NoteListView();
+  const list = new NoteList();
+  list.addNote(element);
+  element.innerHTML = element;
+};
 // (exports => {
 //   class NoteController {
 //     constructor(list) {
